@@ -24,7 +24,7 @@ link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
 
 ## Extraction Method: 
  1. File is downloaded and unzipped to a directory 'UCI HAR Dataset' which is a subfolder of the current working directory.
-2. Data files in the raw data set:
+ 2. Data files in the raw data set:
   * 'features_info.txt': Description of the variables used on the feature vector.
   * 'features.txt': List of all features. 561 observations of 2 variables. 
   * 'activity_labels.txt': Links the class labels with their activity name. 6 observations of 2 variables.
@@ -34,7 +34,7 @@ link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
   * 'test/y_test.txt': Test labels. 2947 observations of 1 variable.
   * 'train/subject_train.txt': Subject label. 7352 observations of 1 variable. 
   * 'test/subject_test.txt': Subject label. 2947 observations of 1 variable.
-3. Approach:
+ 3. Approach:
   * Read in feature list and grep to find mean() and SD() measurements.
   * Read in X_train and Y-train as fixed-width files. In initial read, these are 561-column dataframes (the full list of features).
   * Extract only mean() and SD() columns (shrinking data set size significantly)
