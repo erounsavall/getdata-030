@@ -22,7 +22,7 @@ link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
   2. Download and run run_analysis.R. 
   3. Required packages: plyr, dplyr, reshape2, tidyr
 
-Extraction Method: 
+## Extraction Method: 
  1. File is downloaded and unzipped to a directory 'UCI HAR Dataset' which is a subfolder of the current working directory.
 2. Data files in the raw data set:
   * 'features_info.txt': Description of the variables used on the feature vector.
@@ -34,7 +34,6 @@ Extraction Method:
   * 'test/y_test.txt': Test labels. 2947 observations of 1 variable.
   * 'train/subject_train.txt': Subject label. 7352 observations of 1 variable. 
   * 'test/subject_test.txt': Subject label. 2947 observations of 1 variable.
-  
 3. Approach:
   * Read in feature list and grep to find mean() and SD() measurements.
   * Read in X_train and Y-train as fixed-width files. In initial read, these are 561-column dataframes (the full list of features).
@@ -43,10 +42,8 @@ Extraction Method:
   * Append activity label columbs.
   * Rbind to create one master data set with 10299 observations of 69 variables.
   * Join with activity lookup to get activity names.
-
   * 'Melt' to put measurement names in rows (the measurement values will be in a column). This is tidier data.
   Creates large data set with 679734 observations of 4 variables.
-  
   * ddply to summarize by subject, activity name and measurement. 11880 observations of 4 variables. 
 
 Why this is tidy: Single row for each observation, each variable in a column. We were asked to summarize 'the mean of each measurement'. Therefore, I have assumed that 'measurement' is a variable with 66 levels (tBodyAcc-mean()-X, etc), each of which is in its own row.  
