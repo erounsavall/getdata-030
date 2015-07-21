@@ -1,27 +1,29 @@
 # ReadMe
 Script for reading raw accelerometer data across many files, cleaning it, and producing a tidy data set. 
 
-Files included in this repo | Description
-----------------------------|--------------
-run_analysis.R | Script for analyzing data. 
-             link: https://github.com/erounsavall/getdata-030/blob/master/run_analysis.R
-                 Assumes data is in a subfolder 'UCI HAR Dataset' of the current working directory 
+## Files included in this repo 
+### run_analysis.R
+Script for analyzing data. 
+link: https://github.com/erounsavall/getdata-030/blob/master/run_analysis.R
+Assumes data is in a subfolder 'UCI HAR Dataset' of the current working directory 
                 
-codebook.md     | Describes the tidy dataset output by the script and how to read the script back into R
-                link: https://github.com/erounsavall/getdata-030/blob/master/codebook.md
+### codebook.md
+Describes the tidy dataset output by the script and how to read the script back into R
+link: https://github.com/erounsavall/getdata-030/blob/master/codebook.md
                 
-tidydata.txt    | The tidy dataset output by the script
-                link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
+### tidydata.txt
+The tidy dataset output by the script
+link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
                 
 
-Instructions for use: 
+## Instructions for use: 
   1. Download source data to working directory.
         (link:https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
   2. Download and run run_analysis.R. 
   3. Required packages: plyr, dplyr, reshape2, tidyr
 
 Extraction Method: 
- 1. File is downloaded and unzipped to a directory 'UCI HAR Dataset' which is a subfolder of the current working directory
+ 1. File is downloaded and unzipped to a directory 'UCI HAR Dataset' which is a subfolder of the current working directory.
 2. Data files in the raw data set:
   * 'features_info.txt': Description of the variables used on the feature vector.
   * 'features.txt': List of all features. 561 observations of 2 variables. 
