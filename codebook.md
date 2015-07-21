@@ -6,7 +6,7 @@ Codebook for tidy data (link: https://github.com/erounsavall/getdata-030/blob/ma
 
 To read into R, use 
 ```{r}
-read.table("tidydata.txt",    )
+tidydata <- read.table("tidydata.txt", header = TRUE, stringsAsFactors = TRUE)
 ```
 ##Columns
  

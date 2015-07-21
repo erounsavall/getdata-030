@@ -22,7 +22,7 @@ link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
   2. Download and run run_analysis.R. 
   3. Required packages: plyr, dplyr, reshape2, tidyr
 
-# Extraction Method: 
+# Notes on extraction methodology: 
  1. File is downloaded and unzipped to a directory 'UCI HAR Dataset' which is a subfolder of the current working directory.
  2. Data files in the raw data set:
   * 'features_info.txt': Description of the variables used on the feature vector.

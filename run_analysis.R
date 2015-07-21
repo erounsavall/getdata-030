@@ -73,6 +73,6 @@ run_analysis <- function() {
     ## 66*30*6 = 11880
     tidy <- ddply(yMelt, c("subject", "activityname","measurement"), summarize,
                    mean = mean(value))
-    ## write.table(tidy,"tidydata.txt")              
+    write.table(tidy, "tidydata.txt", row.name=FALSE)              
     tidy                     
 }
