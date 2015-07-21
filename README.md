@@ -1,37 +1,38 @@
 # ReadMe
 Script for reading raw accelerometer data across many files, cleaning it, and producing a tidy data set. 
 
-Files:
-run_analysis.R  Script for analyzing data. 
-                link: https://github.com/erounsavall/getdata-030/blob/master/run_analysis.R
-                Assumes data is in a subfolder 'UCI HAR Dataset' of the current working directory 
-                
-codebook.md     Describes the tidy dataset output by the script and how to read the script back into R
-                link: https://github.com/erounsavall/getdata-030/blob/master/codebook.md
-                
-tidydata.txt    The tidy dataset output by the script
-                link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
-                
+Files included in this repo | Description
+----------------------------|--------------
+run_analysis.R | Script for analyzing data. 
+                | link: https://github.com/erounsavall/getdata-030/blob/master/run_analysis.R
+               |  Assumes data is in a subfolder 'UCI HAR Dataset' of the current working directory 
+                | 
+codebook.md     | Describes the tidy dataset output by the script and how to read the script back into R
+                | link: https://github.com/erounsavall/getdata-030/blob/master/codebook.md
+                | 
+tidydata.txt    | The tidy dataset output by the script
+                | link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
+                | 
 
 Instructions for use: 
-  Download source data to working directory.
+  1. Download source data to working directory.
         (link:https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
-  Download and run run_analysis.R. 
-  Required packages: plyr, dplyr, reshape2, tidyr
+  2. Download and run run_analysis.R. 
+  3. Required packages: plyr, dplyr, reshape2, tidyr
 
 Extraction Method:
 1. File is downloaded and unzipped to a directory 'UCI HAR Dataset' which is a subfolder of the current working directory
 
 2. Data files in the raw data set:
-  - 'features_info.txt': Description of the variables used on the feature vector.
-  - 'features.txt': List of all features. 561 observations of 2 variables. 
-  - 'activity_labels.txt': Links the class labels with their activity name. 6 observations of 2 variables.
-  - 'train/X_train.txt': Training set. 7352 observations of 561 variables.
-  - 'train/y_train.txt': Training labels. 7352 observations of 1 variable.
-  - 'test/X_test.txt': Test set. 2947 observations of 561 variables.
-  - 'test/y_test.txt': Test labels. 2947 observations of 1 variable.
-  - 'train/subject_train.txt': Subject label. 7352 observations of 1 variable. 
-  - 'test/subject_test.txt': Subject label. 2947 observations of 1 variable.
+  > 'features_info.txt': Description of the variables used on the feature vector.
+  > 'features.txt': List of all features. 561 observations of 2 variables. 
+  > 'activity_labels.txt': Links the class labels with their activity name. 6 observations of 2 variables.
+  > 'train/X_train.txt': Training set. 7352 observations of 561 variables.
+  > 'train/y_train.txt': Training labels. 7352 observations of 1 variable.
+  > 'test/X_test.txt': Test set. 2947 observations of 561 variables.
+  > 'test/y_test.txt': Test labels. 2947 observations of 1 variable.
+  > 'train/subject_train.txt': Subject label. 7352 observations of 1 variable. 
+  > 'test/subject_test.txt': Subject label. 2947 observations of 1 variable.
   
 3. Approach:
   Read in feature list and grep to find mean() and SD() measurements.
@@ -50,15 +51,15 @@ Extraction Method:
 Why this is tidy: Single row for each observation, each variable in a column. We were asked to summarize 'the mean of each measurement'. Therefore, I have assumed that 'measurement' is a variable with 66 levels (tBodyAcc-mean()-X, etc), each of which is in its own row.  
 
 
-subject1, activity1, measurement 1 name, value
-subject1, activity1, measurement 2 name, value
-...
-subject1, activity1, measurement N name, value
-subject1, activity2, measurement 1 name, value
-subject1, activity2, measurement 2 name, value
-...
-subject30, activity6, measurement N name, value
+> subject1, activity1, measurement 1 name, value
+> subject1, activity1, measurement 2 name, value
+> ...
+> subject1, activity1, measurement N name, value
+> subject1, activity2, measurement 1 name, value
+> subject1, activity2, measurement 2 name, value
+> ...
+> subject30, activity6, measurement N name, value
 
-          (Note: this is the long form; as mentioned in the rubric, either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion
+(Note: this is the long form; as mentioned in the rubric, either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion
 
                                                    
