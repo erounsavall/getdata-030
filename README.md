@@ -46,7 +46,7 @@ link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
   Creates large data set with 679734 observations of 4 variables.
   * ddply to summarize by subject, activity name and measurement. 11880 observations of 4 variables. 
 
-Why this is tidy: Single row for each observation, each variable in a column. We were asked to summarize 'the mean of each measurement'. Therefore, I have assumed that 'measurement' is a variable with 66 levels (tBodyAcc-mean()-X, etc), each of which is in its own row.  
+Why this is tidy: Single row for each observation, each variable in a column. We were asked to summarize 'the mean of each measurement'. Therefore, I have assumed that 'measurement' is a variable with 66 levels (tBodyAcc-mean()-X, etc), each of which is in its own row.  (The codebook definition of measurement goes into more detail about why I chose those 66 levels and not the angle() variables.)
 
 ```
  subject1, activity1, measurement 1 name, value
