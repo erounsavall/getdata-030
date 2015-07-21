@@ -8,18 +8,18 @@ To read into R, use
 ```{r}
 read.table("tidydata.txt",    )
 ```
-Columns:
+##Columns:
   Subject-Activity-Measurement-Mean
   
 1. Subject: Integer vector, 30 levels, each representing a person performng an activity.
 
 2. Activity: Character vector. 6 levels, each of which describes the activity performed:
-+ WALKING
-+ WALKING_UPSTAIRS
-+ WALKING_DOWNSTAIRS
-+ SITTING
-+ STANDING
-+ LAYING
+* WALKING
+* WALKING_UPSTAIRS
+* WALKING_DOWNSTAIRS
+* SITTING
+* STANDING
+* LAYING
 
 3. Measurement: Character vector, 66 levels. Mean() and SD() of values calculated from raw accelerometer data along a variety of computational methods and vectors. Excludes features/measurements for which "mean" is a parameter value (e.g., fBodyBodyGyroJerkMag-meanFreq(), angle(X,gravityMean)); rationale being that the intent is to capture mean() and sd() as a method of describing distribution of values of those vectors. 
 
