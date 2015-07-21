@@ -35,31 +35,31 @@ Extraction Method:
   * 'test/subject_test.txt': Subject label. 2947 observations of 1 variable.
   
 3. Approach:
-  *Read in feature list and grep to find mean() and SD() measurements.
-  *Read in X_train and Y-train as fixed-width files. In initial read, these are 561-column dataframes (the full list of features).
-  *Extract only mean() and SD() columns (shrinking data set size significantly)
-  *Append subject label columns. 
-  *Append activity label columbs.
-  *Rbind to create one master data set with 10299 observations of 69 variables.
-  *Join with activity lookup to get activity names.
+  * Read in feature list and grep to find mean() and SD() measurements.
+  * Read in X_train and Y-train as fixed-width files. In initial read, these are 561-column dataframes (the full list of features).
+  * Extract only mean() and SD() columns (shrinking data set size significantly)
+  * Append subject label columns. 
+  * Append activity label columbs.
+  * Rbind to create one master data set with 10299 observations of 69 variables.
+  * Join with activity lookup to get activity names.
 
-  *'Melt' to put measurement names in rows (the measurement values will be in a column). This is tidier data.
+  * 'Melt' to put measurement names in rows (the measurement values will be in a column). This is tidier data.
   Creates large data set with 679734 observations of 4 variables.
   
-  *ddply to summarize by subject, activity name and measurement. 11880 observations of 4 variables. 
+  * ddply to summarize by subject, activity name and measurement. 11880 observations of 4 variables. 
 
 Why this is tidy: Single row for each observation, each variable in a column. We were asked to summarize 'the mean of each measurement'. Therefore, I have assumed that 'measurement' is a variable with 66 levels (tBodyAcc-mean()-X, etc), each of which is in its own row.  
 
-
-> subject1, activity1, measurement 1 name, value
-> subject1, activity1, measurement 2 name, value
-> ...
-> subject1, activity1, measurement N name, value
-> subject1, activity2, measurement 1 name, value
-> subject1, activity2, measurement 2 name, value
-> ...
-> subject30, activity6, measurement N name, value
-
+```
+ subject1, activity1, measurement 1 name, value
+ subject1, activity1, measurement 2 name, value
+ ...
+ subject1, activity1, measurement N name, value
+ subject1, activity2, measurement 1 name, value
+ subject1, activity2, measurement 2 name, value
+ ...
+ subject30, activity6, measurement N name, value
+```
 (Note: this is the long form; as mentioned in the rubric, either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion
 
                                                    
