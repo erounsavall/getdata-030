@@ -22,7 +22,6 @@ Instructions for use:
 
 Extraction Method: 
  1. File is downloaded and unzipped to a directory 'UCI HAR Dataset' which is a subfolder of the current working directory
-
 2. Data files in the raw data set:
   * 'features_info.txt': Description of the variables used on the feature vector.
   * 'features.txt': List of all features. 561 observations of 2 variables. 
