@@ -74,5 +74,6 @@ run_analysis <- function() {
     tidy <- ddply(yMelt, c("subject", "activityname","measurement"), summarize,
                    mean = mean(value))
     write.table(tidy, "tidydata.txt", row.name=FALSE)              
+    ## also output the values to memory in case you want to store them in a variable
     tidy                     
 }

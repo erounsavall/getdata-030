@@ -18,12 +18,13 @@ link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
 
 # Instructions for use: 
   1. Download source data to working directory.
-        (link:https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+        * (link:https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+        * NOTE: I have not chosen to have the script automatically download the data. That was not expressly called for in the instructions. I'm sure it would be a nice to have, but for the purposes of this assignment I have assumed the data already exists in a subfolder of the working directory. 
   2. Download and run run_analysis.R. 
   3. Required packages: plyr, dplyr, reshape2, tidyr
 
 # Notes on extraction methodology: 
- 1. File is downloaded and unzipped to a directory 'UCI HAR Dataset' which is a subfolder of the current working directory.
+ 1. Data should be in directory 'UCI HAR Dataset' which is a subfolder of the current working directory. Within that should be a 'test' and 'train' subdirectory. This is the default folder structure created when the file is unzipped.
  2. Data files in the raw data set:
   * 'features_info.txt': Description of the variables used on the feature vector.
   * 'features.txt': List of all features. 561 observations of 2 variables. 
@@ -45,8 +46,10 @@ link: https://github.com/erounsavall/getdata-030/blob/master/tidydata.txt
   * 'Melt' to put measurement names in rows (the measurement values will be in a column). This is tidier data.
   Creates large data set with 679734 observations of 4 variables.
   * ddply to summarize by subject, activity name and measurement. 11880 observations of 4 variables. 
+  * Finally, write.table to create "tidydata.txt"
+  * As a convenience, the script also outputs the tidy data frame to memory so that it can be assigned to a variable in memory.
 
-Why this is tidy: Single row for each observation, each variable in a column. We were asked to summarize 'the mean of each measurement'. Therefore, I have assumed that 'measurement' is a variable with 66 levels (tBodyAcc-mean()-X, etc), each of which is in its own row.  (The codebook definition of measurement goes into more detail about why I chose those 66 levels and not the angle() variables.)
+Why this is tidy: We were asked to summarize 'the mean of each measurement'. Therefore, I have assumed that 'measurement' is a variable with 66 levels (tBodyAcc-mean()-X, etc), each of which is in its own row.  (The codebook definition of measurement goes into more detail about why I chose those 66 levels and not the angle() variables.) In the tidy data set I have created there is a single row for each observation and each variable (subject, activity, measurement, mean value) is in a column. 
 
 ```
  subject1, activity1, measurement 1 name, value
@@ -58,6 +61,6 @@ Why this is tidy: Single row for each observation, each variable in a column. We
  ...
  subject30, activity6, measurement N name, value
 ```
-(Note: this is the long form; as mentioned in the rubric, either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion
+(Note: this is the long form; per the community TAs, either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion
 
                                                    
